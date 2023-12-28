@@ -1,6 +1,8 @@
 # What I learned
+How to use Framer Motion (it's so simple yet so cool)
 How to use higher order components
 How to use CMS (Sanity)
+How to hide API keys and other sensitive information
 
 # notes
 
@@ -20,3 +22,5 @@ How to use CMS (Sanity)
 * apparently `process` is a Node variable ([Reddit](https://www.reddit.com/r/reactjs/comments/m452dv/processenv_process_is_not_defined/))
 * solution: [dev.to article](https://dev.to/boostup/uncaught-referenceerror-process-is-not-defined-12kg)
 * reference: [Vite docs](https://vitejs.dev/guide/env-and-mode)
+
+3. React tooltip also got an update and a few things had changed. It's all in the docs for the npm package: [docs](https://www.npmjs.com/package/react-tooltip)

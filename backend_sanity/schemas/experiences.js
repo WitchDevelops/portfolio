@@ -12,7 +12,7 @@ export default{
             name:'works',
             title:'Works',
             type:'array',
-            of:[{ type:'experiences'}]
+            of:[{ type:'workExperience'}]
         },
     ]
 }
