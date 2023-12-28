@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { AppWrap } from '../../wrapper';
+import { AppWrap, MotionWrap } from '../../wrapper';
 import { motion } from 'framer-motion';
 //for fetching data from CMS
 import { urlFor, client } from '../../client';
@@ -44,4 +44,8 @@ const About = () => {
   )
 }
 
-export default AppWrap(About, 'about') //About secion with #about
+export default AppWrap(
+  MotionWrap(About, 'app__about'),
+  'about',
+  'app__whitebg'
+) //About section with #about, wrapped in motion wrapper

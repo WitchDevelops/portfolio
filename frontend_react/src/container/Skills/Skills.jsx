@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Tooltip } from 'react-tooltip';
 import { motion } from 'framer-motion';
-import { AppWrap } from '../../wrapper';
+import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
 import './Skills.scss';
 
@@ -53,20 +53,20 @@ const Skills = () => {
               <motion.div className="app__skills-exp-works">
                 {experience.works.map((work) => (
                   <>
-                  <motion.div
-                    whileInView={{ opacity: [0, 1] }}
-                    transition={{ duration: 0.5 }}
-                    className="app__skills-exp-work"
-                    data-tooltip-content={work.desc}
-                    data-tooltip-id={work.name}
-                    key={work.name}
-                  >
-                    <h4 className="bold-text">{work.name}</h4>
-                    <p className="p-text">{work.company}</p>
-                  </motion.div>
-                  <Tooltip id={work.name} effect="solid" arrowColor="#FFF" className="skills-tooltip">
-                    {work.desc}
-                  </Tooltip>
+                    <motion.div
+                      whileInView={{ opacity: [0, 1] }}
+                      transition={{ duration: 0.5 }}
+                      className="app__skills-exp-work"
+                      data-tooltip-content={work.desc}
+                      data-tooltip-id={work.name}
+                      key={work.name}
+                    >
+                      <h4 className="bold-text">{work.name}</h4>
+                      <p className="p-text">{work.company}</p>
+                    </motion.div>
+                    <Tooltip id={work.name} effect="solid" arrowColor="#FFF" className="skills-tooltip">
+                      {work.desc}
+                    </Tooltip>
                   </>
                 ))}
               </motion.div>
@@ -80,4 +80,8 @@ const Skills = () => {
   )
 }
 
-export default AppWrap(Skills, 'skills')
+export default AppWrap(
+  MotionWrap(Skills, 'app__skills'),
+  'skills',
+  'app__whitebg'
+)
