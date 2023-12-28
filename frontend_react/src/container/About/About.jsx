@@ -1,15 +1,21 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { images } from '../../constants';
+//for fetching data from CMS
+import { urlFor, client } from '../../client';
 import './About.scss';
 
 const About = () => {
-  const abouts = [
-    { title: 'Web Developer', description: 'I am good web developer', imgUrl: images.about01 },
-    { title: 'Backend Developer', description: 'I am good backend developer', imgUrl: images.about02 },
-    { title: 'Frontend Developer', description: 'I am good frontend developer', imgUrl: images.about03 },
-    { title: 'Frontend Developer', description: 'I am good frontend developer', imgUrl: images.about04 },
-  ];
+
+  //fetching data from CMS
+  //START
+  const [abouts, setAbouts] = useState([]);
+
+  useEffect(() => {
+    const query = '*[_type == "abouts"]';
+    client.fetch(query)
+      .then((data) => setAbouts(data))
+  }, []);
+  //END
 
   return (
     <section id="about" className="app__about app__flex">
@@ -27,7 +33,7 @@ const About = () => {
             className="app__profile-item"
             key={about.title + index}
           >
-            <img src={about.imgUrl} alt={about.title} />
+            <img src={urlFor(about.imgUrl)} alt={about.title} />
             <h2 className="bold-text" style={{ marginTop: 20 }} >{about.title}</h2>
             <p className="p-text">{about.description}</p>
           </motion.div>
