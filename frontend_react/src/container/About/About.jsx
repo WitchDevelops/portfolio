@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { AppWrap } from '../../wrapper';
 import { motion } from 'framer-motion';
 //for fetching data from CMS
 import { urlFor, client } from '../../client';
@@ -18,7 +19,7 @@ const About = () => {
   //END
 
   return (
-    <section id="about" className="app__about app__flex">
+    <section className="app__about app__flex">
       <h2 className="head-text">
         <span>good design </span><br />
         means
@@ -43,4 +44,4 @@ const About = () => {
   )
 }
 
-export default About
+export default AppWrap(About, 'about') //About secion with #about

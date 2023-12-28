@@ -1,3 +1,7 @@
+# What I learned
+How to use higher order components
+How to use CMS (Sanity)
+
 # notes
 
 1. since the release of this tutorial, Sanity got a major upgrade and lots of the stuff showed in the tutorial just doesn't work. The list of differences between versio 2 and 3 can be found [here](https://www.sanity.io/help/studio-v2-vs-v3).
