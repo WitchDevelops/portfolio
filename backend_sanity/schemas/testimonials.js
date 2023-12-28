@@ -22,7 +22,7 @@ export default {
       },
     },
     {
-        name: 'feebback',
+        name: 'feedback',
         title: 'Feedback',
         type: 'string',
     }
