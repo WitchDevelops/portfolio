@@ -1,8 +1,9 @@
 # What I learned
 How to use Framer Motion (it's so simple yet so cool)
 How to use higher order components
-How to use CMS (Sanity)
+How to use a headless CMS ([Sanity](https://www.sanity.io/docs/create-a-sanity-project))
 How to hide API keys and other sensitive information
+That React provides a very useful icon library called [react-icons](https://react-icons.github.io/react-icons/icons/ai/)
 
 # notes
 
@@ -31,3 +32,30 @@ How to hide API keys and other sensitive information
 (try this: [webhooks](https://www.sanity.io/answers/using-webhooks-and-netlify-functions-for-email-notifications-in-sanity))
 read [Sanity docs](https://www.sanity.io/docs/webhooks)
 - and a confirmation email to the sender [postmarkapp](https://www.sanity.io/answers/i-m-building-an-e-commerce-store-and-i-m-wondering-p1612190591079400)
+
+- FORM VALIDATION, atm there is absolutely none
+- disconnect mokosh.dev from the other project, connect it here
+- or buy a new domain? a better one?
+- come up with a nicer color scheme
+- create a logo
+- get some testimonials
+- reverse the order of work experiences
+- add a downloadable CV
+- add more projects
+
+# HOW TO
+
+## Run Sanity studio from CLI
+1. cd to `backend_sanity`
+2. ~~`sanity start`~~ deprecated, run `npm run dev`
+3. go to `http://localhost:3333/structure`
+
+there's also `sanity manage` that opens project settings
+
+## Make Sanity send data to given domain
+1. cd to `backend_sanity`
+2. `sanity manage`
+3. API tab
+4. under CORS orgins click "add CORS origin"
+5. paste your domain name, allow credentials
+6. it should now send data to the given endpoint.
