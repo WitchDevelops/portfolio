@@ -24,3 +24,10 @@ How to hide API keys and other sensitive information
 * reference: [Vite docs](https://vitejs.dev/guide/env-and-mode)
 
 3. React tooltip also got an update and a few things had changed. It's all in the docs for the npm package: [docs](https://www.npmjs.com/package/react-tooltip)
+
+# TODO
+
+- Make it send forms to my email
+(try this: [webhooks](https://www.sanity.io/answers/using-webhooks-and-netlify-functions-for-email-notifications-in-sanity))
+read [Sanity docs](https://www.sanity.io/docs/webhooks)
+- and a confirmation email to the sender [postmarkapp](https://www.sanity.io/answers/i-m-building-an-e-commerce-store-and-i-m-wondering-p1612190591079400)
