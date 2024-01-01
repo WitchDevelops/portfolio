@@ -21,9 +21,8 @@ const About = () => {
   return (
     <section className="app__about app__flex">
       <h2 className="head-text">
-        <span>good design </span><br />
-        means
-        <span> good business</span>
+        Crafting digital
+        <span> experiences</span>
       </h2>
       <div className="app__profiles">
         {abouts.map((about, index) => (

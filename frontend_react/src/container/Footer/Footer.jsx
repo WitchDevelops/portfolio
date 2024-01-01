@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { images } from '../../constants';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { client } from '../../client';
 import './Footer.scss'
@@ -34,17 +33,8 @@ const Footer = () => {
 
   return (
     <section>
-      <h2 className="head-text">Get in touch</h2>
-      <div className="app__footer-cards">
-        <div className="app__footer-card">
-          <img src={images.email} alt="email" />
-          <a href="mailto:3k2oA@example.com" className="p-text">3k2oA@example.com</a>
-        </div>
-        <div className="app__footer-card">
-          <img src={images.mobile} alt="email" />
-          <a href="tel:654256456" className="p-text">654256456</a>
-        </div>
-      </div>
+      <h2 className="head-text">Get <span> in touch</span></h2>
+      
 
       {/* contact form */}
       {!isFormSubmitted ? // if the form is not submitted, show it
@@ -57,10 +47,10 @@ const Footer = () => {
           </div>
           <div>
             <textarea
-              className="p-text"
+              className="p-text "
               placeholder="Your message"
               value={message}
-
+              noresize
               name="message"
               onChange={handleChangeInput}
             />
@@ -69,7 +59,7 @@ const Footer = () => {
         </div>
         : // but after the form is submitted, show success message
         <div>
-          <h3 className="head-text">Thank you for getting in touch!</h3>
+          <h3 className="head-text">Your message was sent, thanks!</h3>
         </div>
       }
       {/* end contact form */}
