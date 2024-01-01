@@ -34,10 +34,6 @@ read [Sanity docs](https://www.sanity.io/docs/webhooks)
 - and a confirmation email to the sender [postmarkapp](https://www.sanity.io/answers/i-m-building-an-e-commerce-store-and-i-m-wondering-p1612190591079400)
 
 - FORM VALIDATION, atm there is absolutely none
-- disconnect mokosh.dev from the other project, connect it here
-- or buy a new domain? a better one?
-- come up with a nicer color scheme
-- create a logo
 - get some testimonials
 - reverse the order of work experiences
 - add a downloadable CV
@@ -59,3 +55,14 @@ there's also `sanity manage` that opens project settings
 4. under CORS orgins click "add CORS origin"
 5. paste your domain name, allow credentials
 6. it should now send data to the given endpoint.
+
+# Attributions
+
+- Photo of house fronts in Copenhagen by [Rolands Varsbergs](https://pixabay.com/users/varsbergsrolands-11846303/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4054563)from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4054563)
+
+- Lightbulb in space by [愚木混株 Cdd20](https://pixabay.com/users/cdd20-1193381/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5831252) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5831252)
+
+- Picture of paints and brushes by [Pexels](https://pixabay.com/users/pexels-2286921/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1851483) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1851483)
+
+- favicon generated with [realfavicongenerator.net]()
+

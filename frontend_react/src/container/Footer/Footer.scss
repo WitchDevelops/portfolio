@@ -50,7 +50,8 @@
 }
 
 .app__footer-form {
-    width: 60%;
+    width: 60vw;
+    max-width: 550px;
     flex-direction: column;
     margin: 1rem auto;
     div {
@@ -77,6 +78,9 @@
         &:hover {
             box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
         }
+    }
+    textarea {
+        resize: none;
     }
     button {
         padding: 1rem 2rem;
