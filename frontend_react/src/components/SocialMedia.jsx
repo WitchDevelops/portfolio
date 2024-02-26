@@ -9,7 +9,7 @@ const SocialMedia = () => {
             <a className="app__social-link" href="https://twitter.com/DevMotherOfCats" target="_blank">
                 <BsTwitter />
             </a>
-            <a className="app__social-link" href="https://blog.mokosh.dev/" target="_blank">
+            <a className="app__social-link" href="https://witchwrites.hashnode.dev/" target="_blank">
                 <FaHashnode />
             </a>
             <a className="app__social-link" href="https://github.com/WitchDevelops" target="_blank">
