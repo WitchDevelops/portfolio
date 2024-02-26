@@ -34,11 +34,11 @@ const Footer = () => {
   return (
     <section>
       <h2 className="head-text">Get <span> in touch</span></h2>
-      
+
 
       {/* contact form */}
       {!isFormSubmitted ? // if the form is not submitted, show it
-        <div className="app__footer-form app__flex">
+        <form className="app__footer-form app__flex" name="contact" netlify>
           <div className="app__flex">
             <input className="p-text" type="text" placeholder="Your name" name="name" value={name} onChange={handleChangeInput} />
           </div>
@@ -56,7 +56,7 @@ const Footer = () => {
             />
           </div>
           <button type="button" className="p-text" onClick={handleSubmit}>{loading ? ' Sending' : 'Send Message'}</button>
-        </div>
+        </form>
         : // but after the form is submitted, show success message
         <div>
           <h3 className="head-text">Your message was sent, thanks!</h3>
