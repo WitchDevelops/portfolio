@@ -34,8 +34,7 @@ read [Sanity docs](https://www.sanity.io/docs/webhooks)
 - and a confirmation email to the sender [postmarkapp](https://www.sanity.io/answers/i-m-building-an-e-commerce-store-and-i-m-wondering-p1612190591079400)
 
 - FORM VALIDATION, atm there is absolutely none
-- get some testimonials
-- reverse the order of work experiences
+- reverse the order of work experiences - redo, delete tooltip
 - add a downloadable CV
 - add more projects
 
