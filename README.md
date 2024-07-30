@@ -1,11 +1,12 @@
 # What I learned
-How to use Framer Motion (it's so simple yet so cool)
-How to use higher order components
-How to use a headless CMS ([Sanity](https://www.sanity.io/docs/create-a-sanity-project))
-How to hide API keys and other sensitive information
-That React provides a very useful icon library called [react-icons](https://react-icons.github.io/react-icons/icons/ai/)
 
-# notes
+* How to use Framer Motion (it's so simple yet so cool)
+* How to use higher order components
+* How to use a headless CMS ([Sanity](https://www.sanity.io/docs/create-a-sanity-project))
+* How to hide API keys and other sensitive information
+* That React provides a very useful icon library called [react-icons](https://react-icons.github.io/react-icons/icons/ai/)
+
+# Notes
 
 1. since the release of this tutorial, Sanity got a major upgrade and lots of the stuff showed in the tutorial just doesn't work. The list of differences between versio 2 and 3 can be found [here](https://www.sanity.io/help/studio-v2-vs-v3).
 
@@ -20,7 +21,7 @@ That React provides a very useful icon library called [react-icons](https://reac
 >Overall I'm new to using environment variables for security, e.g. to store API keys etc., so it's the first time I've encountered this error. Hiding sensitive information is a must, but it's not an easy task and requires some backend. More info: [YT video: how to hide your API keys](https://youtu.be/FcwfjMebjTU?si=QYalbItHNe8RtCYi)
 
 * it's a known issue: [StackOverflow](https://stackoverflow.com/questions/11104028/why-is-process-env-node-env-undefined)
-* apparently `process` is a Node variable ([Reddit](https://www.reddit.com/r/reactjs/comments/m452dv/processenv_process_is_not_defined/))
+* `process` is a Node variable ([Node docs](https://nodejs.org/api/process.html#process))
 * solution: [dev.to article](https://dev.to/boostup/uncaught-referenceerror-process-is-not-defined-12kg)
 * reference: [Vite docs](https://vitejs.dev/guide/env-and-mode)
 
@@ -29,11 +30,15 @@ That React provides a very useful icon library called [react-icons](https://reac
 # TODO
 
 - Make it send forms to my email
+
 (try this: [webhooks](https://www.sanity.io/answers/using-webhooks-and-netlify-functions-for-email-notifications-in-sanity))
+
 read [Sanity docs](https://www.sanity.io/docs/webhooks)
+or try to write a backend and use Vercel/Netlify/Supabase for it?
+
 - and a confirmation email to the sender [postmarkapp](https://www.sanity.io/answers/i-m-building-an-e-commerce-store-and-i-m-wondering-p1612190591079400)
 
-- FORM VALIDATION, atm there is absolutely none
+- FORM VALIDATION, atm there is absolutely none (use `react-hook-form` and `Zod` for that)
 - reverse the order of work experiences - redo, delete tooltip
 - add a downloadable CV
 - add more projects
