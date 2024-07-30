@@ -43,7 +43,9 @@ const Work = () => {
           'Landing Page',
           'Web App',
           'API',
+          'Authentication',
           'React',
+          'Next.js',
           'Tailwind CSS',
           'Bootstrap',
           'React Router',
@@ -108,7 +110,7 @@ const Work = () => {
               <p className="p-text" style={{ marginTop: 10 }}>{work.description}</p>
               <div className="app__work-tag app__flex">
                 {
-                  work.tags.map((tag, index) => (
+                  work.tags?.map((tag, index) => (
                     <p key={index} className="p-text app__work-tag_item">{tag}</p>
                   ))
                 }
