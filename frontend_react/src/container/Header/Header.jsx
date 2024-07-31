@@ -1,4 +1,3 @@
-import React from 'react';
 import { AppWrap } from '../../wrapper';
 import { motion } from 'framer-motion';
 import { images } from '../../constants';
