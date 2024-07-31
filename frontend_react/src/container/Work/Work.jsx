@@ -24,7 +24,6 @@ const Work = () => {
     setAnimateCard({ y: 100, opacity: 0 });
     setTimeout(() => {
       setAnimateCard({ y: 0, opacity: 1 });
-      // filter logic
       if (item === 'All') {
         setFilterWork(works);
       } else {
@@ -47,12 +46,12 @@ const Work = () => {
           'React',
           'Next.js',
           'Tailwind CSS',
-          'Bootstrap',
-          'React Router',
+          // 'Bootstrap',
+          // 'React Router',
           'Material UI',
           'TypeScript',
           'JavaScript',
-          'SASS',
+          // 'SASS',
           'CSS',
           'HTML',
           'All'
