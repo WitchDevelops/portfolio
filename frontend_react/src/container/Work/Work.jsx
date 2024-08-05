@@ -39,35 +39,53 @@ const Work = () => {
       <h2 className="head-text">
         My Creative <span>Portfolio</span>
       </h2>
-      <div className="app__work-filter">
-        {[
-          'Landing Page',
-          'Web App',
-          'API',
-          'Authentication',
-          'React',
-          'Next.js',
-          'Tailwind CSS',
-          'Supabase',
-          // 'Bootstrap',
-          // 'React Router',
-          'Material UI',
-          'TypeScript',
-          'JavaScript',
-          'SASS',
-          'CSS',
-          'HTML',
-          'All'
-        ].map((item, index) => (
-          <div
-            key={index}
-            className={`app__work-filter-item app__flex p-text ${index === item ? 'item-active' : ''
-              }`}
-            onClick={() => handleWorkFilter(item)}
-          >
-            {item}
-          </div>
-        ))}
+
+      <div className="app__work-filters-wrapper">
+        <p>Filter by project type</p>
+        <div className="app__work-filter">
+          {[
+            'Web Page',
+            'Web App',
+          ].map((item, index) => (
+            <div
+              key={index}
+              className={`app__work-filter-item app__flex ${index === item ? 'item-active' : ''
+                }`}
+              onClick={() => handleWorkFilter(item)}
+            >
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="app__work-filters-wrapper">
+        <p>Filter by technology used</p>
+        <div className="app__work-filter">
+          {[
+            'All',
+            'API',
+            'Authentication',
+            'React',
+            'Next.js',
+            'Tailwind CSS',
+            'Supabase',
+            'Material UI',
+            'TypeScript',
+            'JavaScript',
+            'SASS',
+            'CSS',
+            'HTML'
+          ].map((item, index) => (
+            <div
+              key={index}
+              className={`app__work-filter-item app__flex ${index === item ? 'item-active' : ''
+                }`}
+              onClick={() => handleWorkFilter(item)}
+            >
+              {item}
+            </div>
+          ))}
+        </div>
       </div>
       <motion.div
         animate={animateCard}
@@ -107,14 +125,15 @@ const Work = () => {
 
               </motion.div>
             </div>
-            <div className="app__work-content app__flex">
-
-              <h4 className="bold-text">{work.title}</h4>
-              <p className="p-text" style={{ marginTop: 10 }}>{work.description}</p>
+            <div className="app__work-content">
+              <div className="app__work-card-description">
+                <h4 className="bold-text">{work.title}</h4>
+                <p className="p-text" style={{ marginTop: 10 }}>{work.description}</p>
+              </div>
               <div className="app__work-tag app__flex">
                 {
                   work.tags?.map((tag, index) => (
-                    <p key={index} className="p-text app__work-tag_item">{tag}</p>
+                    <p key={index} className="app__work-tag_item">{tag}</p>
                   ))
                 }
 
