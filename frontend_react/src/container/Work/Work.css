@@ -4,14 +4,26 @@
   flex-direction: column;
 }
 
+.app__work-filters-wrapper {
+  margin-block: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+@media (min-width: 1290px) {
+  .app__work-filters-wrapper {
+    max-width: 80%;
+    margin-inline: auto;
+  }
+}
+
 .app__work-filter {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 4rem auto 2rem;
-  max-width: 80%;
 }
 .app__work-filter .app__work-filter-item {
   padding: 0.5rem 1rem;
@@ -22,16 +34,11 @@
   cursor: pointer;
   transition: all 0.3s ease;
   margin: 0.5rem;
+  font-size: 12px;
 }
 .app__work-filter .app__work-filter-item:hover {
   background-color: var(--secondary-color);
   color: #fff;
-}
-@media screen and (min-width: 2000px) {
-  .app__work-filter .app__work-filter-item {
-    padding: 1rem 2rem;
-    border-radius: 0.85rem;
-  }
 }
 .app__work-filter .item-active {
   background-color: var(--secondary-color);
@@ -42,12 +49,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
-  margin-top: 5rem;
+  align-items: stretch;
+  margin-top: 2rem;
 }
 .app__work-portfolio .app__work-item {
-  width: 270px;
+  width: 300px;
   flex-direction: column;
+  justify-content: flex-start;
   margin: 2rem;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -75,7 +83,7 @@
 
 .app__work-img {
   width: 100%;
-  height: 230px;
+  aspect-ratio: 1/1;
   position: relative;
   margin-bottom: 0.5rem;
 }
@@ -132,12 +140,11 @@
   padding: 0.5rem;
   width: 100%;
   position: relative;
+  display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-}
-.app__work-content h4 {
-  margin-top: 1rem;
-  line-height: 1.5;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 .app__work-content .app__work-tag {
   display: flex;
@@ -145,7 +152,7 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   width: 100%;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   margin-top: 1rem;
 }
@@ -154,4 +161,19 @@
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 99px;
+  font-size: 12px;
+}
+
+.app__work-card-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.app__work-card-description h4 {
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+.app__work-card-description p {
+  text-align: center;
 }/*# sourceMappingURL=Work.css.map */
