@@ -3,6 +3,7 @@ import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 import { AppWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
+import { useMediaQuery } from 'react-responsive';
 import './Work.scss';
 
 const Work = () => {
@@ -10,6 +11,7 @@ const Work = () => {
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
+  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   useEffect(() => {
     const query = '*[_type == "works"]';
@@ -77,7 +79,8 @@ const Work = () => {
             <div className="app__work-img app__flex">
               <img src={urlFor(work.imgUrl)} alt={work.name} className="app__work-img" />
               <motion.div
-                whileHover={{ opacity: [0, 1] }}
+                whileInView={{ opacity: isMobile ? 1 : 0 }}
+                whileHover={{ opacity: isMobile ? 1 : [0, 1] }}
                 transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
                 className="app__work-hover app__flex"
               >
