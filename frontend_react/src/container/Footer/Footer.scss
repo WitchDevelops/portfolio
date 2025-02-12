@@ -23,6 +23,9 @@
     color: var(--secondary-color);
     outline: none;
     font-size: 1rem;
+    &:focus {
+      outline: 1px solid var(--secondary-color);
+    }
   }
   textarea {
     height: 170px;
@@ -45,32 +48,47 @@
 .form-label {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  font-size: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  gap: 1rem;
+  @media (max-width: 576px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 }
 
 .form-error {
-  color: var(--error-color);      
+  color: var(--error-color);
+  font-weight: 500;
+  font-size: 0.75rem;
+  @media (min-width: 576px) {
+    text-align: right;
+  }
 }
 
 .btn-submit {
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    border: none;
-    background-color: var(--secondary-color);
-    color: var(--white-color)!important;
-    outline: none;
-    margin: 2rem 0 0 0;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    font-family: var(--font-base);
-    text-transform: uppercase;
-    &:hover {
-      background-color: var(--primary-color);
-      color: var(--secondary-color)!important;
-      outline: 1px solid var(--secondary-color);
-      font-weight: 600;
-    }
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--secondary-color);
+  color: var(--white-color) !important;
+  outline: none;
+  margin: 2rem 0 0 0;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-family: var(--font-base);
+  text-transform: uppercase;
+  &:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color) !important;
+    outline: 1px solid var(--secondary-color);
+    font-weight: 600;
+  }
+  &:focus {
+    outline: 2px solid var(--secondary-color);
+  }
 }

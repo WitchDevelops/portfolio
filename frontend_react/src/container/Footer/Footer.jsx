@@ -13,7 +13,7 @@ const Footer = () => {
   const contactSchema = z.object({
     from_name: z.string().min(2, "Name must be at least 2 characters"),
     from_email: z.string().email("Invalid email address"),
-    message: z.string().min(5, "Message cannot be empty"),
+    message: z.string().min(1, "Message cannot be empty").min(5, "Your message is awfully short, write something more"),
   });
 
   const {
@@ -24,12 +24,17 @@ const Footer = () => {
     resolver: zodResolver(contactSchema),
   });
 
-  const sendEmail = (data) => {
-    setLoading(true);
-    emailjs
-      .send("service_2hemfqc", "template_iykwa3r", data, "ZlnCVD6mjEy0Wdd3R")
-      .then(() => { setLoading(false); setIsFormSubmitted(true) })
-      .catch((err) => alert("Error sending email: " + err.text));
+  const sendEmail = async (data) => {
+    try {
+      setLoading(true);
+      await emailjs.send("service_2hemfqc", "template_iykwa3r", data, "ZlnCVD6mjEy0Wdd3R");
+      setIsFormSubmitted(true);
+    } catch (error) {
+      console.error("Email sending error:", error);
+      alert("Failed to send the message. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -40,9 +45,9 @@ const Footer = () => {
         <form className="app__footer-form app__flex" name="contact" onSubmit={handleSubmit(sendEmail)}>
 
           <div className="form-label">
-            <label htmlFor="name">Name</label>
+            <label htmlFor="from_name">Name</label>
             {errors.from_name && (
-              <p className="form-error">{errors.from_name.message}</p>
+              <p className="form-error" aria-live="polite">{errors.from_name.message}</p>
             )}
           </div>
 
@@ -51,9 +56,9 @@ const Footer = () => {
           </div>
 
           <div className="form-label">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="from_email">Email</label>
             {errors.from_email && (
-              <p className="form-error">{errors.from_email.message}</p>
+              <p className="form-error" aria-live="polite">{errors.from_email.message}</p>
             )}
           </div>
 
@@ -62,12 +67,11 @@ const Footer = () => {
           </div>
 
           <div className="form-label">
-            <label>Message</label>
+            <label htmlFor='message'>Message</label>
             {errors.message && (
-              <p className="form-error">{errors.message.message}</p>
+              <p className="form-error" aria-live="polite">{errors.message.message}</p>
             )}
           </div>
-
 
           <div className="app__flex form-field">
             <textarea
@@ -77,7 +81,7 @@ const Footer = () => {
               {...register("message")}
             />
           </div>
-          <button type="submit" className="btn-submit p-text">{loading ? ' Sending' : 'Send Message'}</button>
+          <button type="submit" className="btn-submit p-text" disabled={loading}>{loading ? ' Sending...' : 'Send Message'}</button>
         </form>
         :
         <div className="app__footer-form">
