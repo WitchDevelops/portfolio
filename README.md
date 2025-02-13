@@ -8,7 +8,7 @@
 
 # Notes
 
-1. I followed a JSM tutorial to create this project. Since the release of this tutorial, Sanity got a major upgrade and lots of the stuff showed in the tutorial just don't work anymore. The list of differences between version 2 and 3 can be found [here](https://www.sanity.io/help/studio-v2-vs-v3).
+1. I followed a [JSM tutorial](https://youtu.be/3HNyXCPDQ7Q?si=5iNY6y6zRhs8tBGZ) to create this project. Since the release of this tutorial, Sanity got a major upgrade and lots of the stuff showed in the tutorial just don't work anymore. The list of differences between version 2 and 3 can be found [here](https://www.sanity.io/help/studio-v2-vs-v3).
 
 *  `sanity start` in Sanity Studio 3 is used to preview static builds. To run a development server, use the `npm run dev` command.
 
@@ -16,7 +16,7 @@
 
 `sanityClient` got replaced by `createClient` ([docs](https://www.sanity.io/docs/js-client))
 
-2. The tutorial used `create-react-app`, and I used Vite to scaffold the project. `process.env` doesn't work with Vite, using it results in `Uncaught ReferenceError: process is not defined`.
+2. The tutorial used `create-react-app`, but I used Vite to scaffold the project. `process.env` doesn't work with Vite, using it results in `Uncaught ReferenceError: process is not defined`.
 
 >Overall I'm new to using environment variables for security, e.g. to store API keys etc., so it's the first time I've encountered this error. Hiding sensitive information is a must, but it's not an easy task and requires some backend. More info: [YT video: how to hide your API keys](https://youtu.be/FcwfjMebjTU?si=QYalbItHNe8RtCYi)
 
