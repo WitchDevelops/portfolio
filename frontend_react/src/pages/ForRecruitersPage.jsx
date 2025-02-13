@@ -1,7 +1,9 @@
 import { Heading } from "../components/typography/Heading"
+import { Skills } from "../container"
+
 export const ForRecruitersPage = () => {
     return (
-        <div >
+        <div className="app__wrapper app__flex">
             <Heading text="for" highlight="recruiters" />
             <div>
                 Some of my experiences
@@ -9,6 +11,7 @@ export const ForRecruitersPage = () => {
                 pdf with CV
                 and a button to dowload it
             </div>
+            <Skills />
         </div>
     )
 }

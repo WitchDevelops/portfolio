@@ -1,4 +1,4 @@
-import { About, Footer, Hero, Skills, Testimonials, Work } from "../container"
+import { About, Footer, Hero, Testimonials, Work } from "../container"
 
 export const HomePage = () => {
     return (
@@ -6,7 +6,6 @@ export const HomePage = () => {
             <Hero />
             <About />
             <Work />
-            <Skills />
             <Testimonials />
             <Footer />
         </div>
