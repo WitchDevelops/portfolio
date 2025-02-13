@@ -54,7 +54,8 @@
   align-items: center;
   flex-direction: column;
 }
-.app__header-badge .badge-cmp, .app__header-badge .tag-cmp {
+.app__header-badge .badge-cmp,
+.app__header-badge .tag-cmp {
   padding: 1rem 2rem;
   border: var(--white-color);
   border-radius: 15px;
@@ -179,4 +180,4 @@
   .app__header-img {
     margin: 2rem 0;
   }
-}/*# sourceMappingURL=Header.css.map */
+}/*# sourceMappingURL=Hero.css.map */

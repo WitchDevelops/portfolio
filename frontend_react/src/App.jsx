@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router';
+import { ThemeProvider } from 'styled-components';
+import { theme } from './theme';
 import { SocialMedia } from './components';
 import { Navbar } from './components/navigation/Navbar';
 import { ForRecruitersPage } from './pages/ForRecruitersPage';
@@ -22,14 +24,16 @@ const App = () => {
   }, [location]);
 
   return (
-    <div className='app'>
-      <SocialMedia />
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/for-recruiters" element={<ForRecruitersPage />} />
-      </Routes>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className='app'>
+        <SocialMedia />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/for-recruiters" element={<ForRecruitersPage />} />
+        </Routes>
+      </div>
+    </ThemeProvider>
   )
 }
 

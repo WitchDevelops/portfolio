@@ -1,9 +1,9 @@
-import { About, Footer, Header, Skills, Testimonials, Work } from "../container"
+import { About, Footer, Hero, Skills, Testimonials, Work } from "../container"
 
 export const HomePage = () => {
     return (
         <div>
-            <Header />
+            <Hero />
             <About />
             <Work />
             <Skills />
