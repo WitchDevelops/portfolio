@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router';
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 import { images, sections } from '../../constants';
 import './Navbar.scss';
 
-const Navbar = () => {
+export const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
@@ -16,7 +17,12 @@ const Navbar = () => {
         {sections.map((section) => (
           <li className="app__flex p-text" key={`link-${section}`}>
             <div />
-            <a href={`#${section}`}>{section}</a>
+            {
+              section === 'for recruiters' ? (
+                <NavLink to="/for-recruiters">{section}</NavLink>
+              ) :
+                (<a href={`/#${section}`} >{section}</a>)
+            }
           </li>
         ))}
       </ul>
@@ -34,9 +40,15 @@ const Navbar = () => {
             <ul>
               {sections.map((section) => (
                 <li key={section}>
-                  <a href={`#${section}`} onClick={() => setToggle(false)}>
-                    {section}
-                  </a>
+                  {section === "for recruiters" ? (
+                    <NavLink to="/for-recruiters/" onClick={() => setToggle(false)}>
+                      {section}
+                    </NavLink>
+                  ) : (
+                    <a href={`/#${section}`} onClick={() => setToggle(false)}>
+                      {section}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -46,5 +58,3 @@ const Navbar = () => {
     </nav>
   );
 };
-
-export default Navbar;
