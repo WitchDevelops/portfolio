@@ -1,5 +1,10 @@
+# What is it
+
+It's the source code for my personal portfolio. The site is deployed at https://www.mokosh.dev/.
+
 # What I learned
 
+* How to send data directly to my inbox using [EmailJS library](https://www.emailjs.com/)
 * How to use Framer Motion (it's so simple yet so cool)
 * How to use higher order components
 * How to use a headless CMS ([Sanity](https://www.sanity.io/docs/create-a-sanity-project))
@@ -33,16 +38,6 @@ Now that I have more experience, using `.env` to store the API keys is a very lo
 
 # TODO
 
-- Make it send forms to my email
-
-(try this: [webhooks](https://www.sanity.io/answers/using-webhooks-and-netlify-functions-for-email-notifications-in-sanity))
-
-read [Sanity docs](https://www.sanity.io/docs/webhooks)
-or try to write a backend and use Vercel/Netlify/Supabase for it?
-
-- and a confirmation email to the sender [postmarkapp](https://www.sanity.io/answers/i-m-building-an-e-commerce-store-and-i-m-wondering-p1612190591079400)
-
-- FORM VALIDATION, atm there is absolutely none (use `react-hook-form` and `Zod` for that)
 - reverse the order of work experiences - redo, delete tooltip
 - add a downloadable CV
 - add more projects
