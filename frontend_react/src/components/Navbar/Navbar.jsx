@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { motion } from 'framer-motion';
-import { images } from '../../constants';
+import { images, sections } from '../../constants';
 import './Navbar.scss';
 
 const Navbar = () => {
@@ -13,10 +13,10 @@ const Navbar = () => {
         <img src={images.logo} alt="logo" />
       </a>
       <ul className="app__navbar-links">
-        {['home', 'about', 'work', 'skills', 'testimonials', 'contact'].map((item) => (
-          <li className="app__flex p-text" key={`link-${item}`}>
+        {sections.map((section) => (
+          <li className="app__flex p-text" key={`link-${section}`}>
             <div />
-            <a href={`#${item}`}>{item}</a>
+            <a href={`#${section}`}>{section}</a>
           </li>
         ))}
       </ul>
@@ -32,10 +32,10 @@ const Navbar = () => {
           >
             <HiX onClick={() => setToggle(false)} />
             <ul>
-              {['home', 'about', 'work', 'skills', 'testimonials', 'contact'].map((item) => (
-                <li key={item}>
-                  <a href={`#${item}`} onClick={() => setToggle(false)}>
-                    {item}
+              {sections.map((section) => (
+                <li key={section}>
+                  <a href={`#${section}`} onClick={() => setToggle(false)}>
+                    {section}
                   </a>
                 </li>
               ))}

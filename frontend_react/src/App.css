@@ -30,23 +30,10 @@
   flex-direction: column;
   padding: 4rem 2rem;
 }
-@media screen and (max-width: 450px) {
+@media (max-width: 450px) {
   .app__wrapper {
     padding: 4rem 1rem 2rem;
   }
-}
-
-.copyright {
-  width: 100%;
-  padding: 2rem 0 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-.copyright p {
-  text-transform: uppercase;
-  color: var(--black-color);
 }
 
 .head-text {
@@ -59,12 +46,12 @@
 .head-text span {
   color: var(--secondary-color);
 }
-@media screen and (min-width: 2000px) {
+@media (min-width: 2000px) {
   .head-text {
     font-size: 4rem;
   }
 }
-@media screen and (max-width: 450px) {
+@media (max-width: 450px) {
   .head-text {
     font-size: 2rem;
   }
@@ -76,7 +63,7 @@
   color: var(--gray-color);
   line-height: 1.5;
 }
-@media screen and (min-width: 2000px) {
+@media (min-width: 2000px) {
   .p-text {
     font-size: 1.75rem;
   }
@@ -88,12 +75,12 @@
   color: var(--black-color);
   text-align: left;
 }
-@media screen and (min-width: 2000px) {
+@media (min-width: 2000px) {
   .bold-text {
     font-size: 2rem;
   }
 }
-@media screen and (max-width: 450px) {
+@media (max-width: 450px) {
   .bold-text {
     font-size: 0.9rem;
   }
@@ -101,10 +88,16 @@
 
 .app__social {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
   padding: 1rem;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
 }
 .app__social-link {
   width: 40px;
@@ -130,7 +123,7 @@
 .app__social-link:hover svg {
   color: var(--white-color);
 }
-@media screen and (min-width: 2000px) {
+@media (min-width: 2000px) {
   .app__social-link {
     width: 70px;
     height: 70px;
@@ -142,37 +135,8 @@
   }
 }
 
-.app__navigation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 1rem;
-}
-.app__navigation .app__navigation-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #cbcbcb;
-  margin: 0.5rem;
-  transition: background-color 0.2s ease-in-out;
-}
-.app__navigation .app__navigation-dot:hover {
-  background-color: var(--secondary-color);
-}
-@media screen and (min-width: 2000px) {
-  .app__navigation .app__navigation-dot {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .app__navigation,
+@media (max-width: 500px) {
   .app__social {
     display: none;
-  }
-  .copyright {
-    padding: 2rem;
   }
 }/*# sourceMappingURL=App.css.map */
