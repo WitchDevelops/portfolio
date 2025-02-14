@@ -7,7 +7,7 @@ interface PDFViewerProps {
 
 const StyledPDFViewer = styled.div`
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 80px);
   iframe {
     width: 100%;
     height: 100%;
