@@ -68,27 +68,3 @@
     text-align: right;
   }
 }
-
-.btn-submit {
-  padding: 1rem 2rem;
-  border-radius: 10px;
-  border: none;
-  background-color: var(--secondary-color);
-  color: var(--white-color) !important;
-  outline: none;
-  margin: 2rem 0 0 0;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  font-family: var(--font-base);
-  text-transform: uppercase;
-  &:hover {
-    background-color: var(--primary-color);
-    color: var(--secondary-color) !important;
-    outline: 1px solid var(--secondary-color);
-    font-weight: 600;
-  }
-  &:focus {
-    outline: 2px solid var(--secondary-color);
-  }
-}

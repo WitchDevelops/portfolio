@@ -14,7 +14,17 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ fileSrc }) => {
         <div style={{ marginBlock: "2rem" }}>
           <Heading text="My" highlight="Resume" />
         </div>
-
+        <div>
+          <p>In case the preview below doesn't display</p>
+          <div>
+            <a href={fileSrc} target="_blank" rel="noreferrer">
+              Open the CV in the new tab
+            </a>
+            <a href={fileSrc} download>
+              Download the CV
+            </a>
+          </div>
+        </div>
         <Viewer
           fileUrl={fileSrc}
           renderLoader={(percentages: number) => (
