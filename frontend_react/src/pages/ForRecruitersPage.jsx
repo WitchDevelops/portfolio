@@ -1,6 +1,7 @@
 import { Skills } from "../container";
 import { PDFViewer } from "../components/pdfViewer/pdfViewer";
 
+
 export const ForRecruitersPage = () => {
     return (
         <div >

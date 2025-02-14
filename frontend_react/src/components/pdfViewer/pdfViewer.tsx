@@ -9,7 +9,7 @@ interface PDFViewerProps {
 
 export const PDFViewer: React.FC<PDFViewerProps> = ({ fileSrc }) => {
   return (
-    <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
+    <Worker workerUrl="/pdfviewer/worker.js">
       <section className="app__wrap">
         <div style={{ marginBlock: "2rem" }}>
           <Heading text="My" highlight="Resume" />
