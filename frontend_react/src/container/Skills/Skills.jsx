@@ -3,11 +3,13 @@ import { motion } from 'framer-motion';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
 import { Heading } from '../../components/typography/Heading';
+import { useTheme } from 'styled-components';
 import './Skills.scss';
 
 const Skills = () => {
   const [skills, setSkills] = useState([]);
   const [experience, setExperience] = useState([]);
+  const theme = useTheme();
 
   useEffect(() => {
     const skillQuery = '*[_type == "skills"]';
@@ -30,8 +32,7 @@ const Skills = () => {
         <motion.div className="app__skills-list">
           {skills.map((skill) => (
             <motion.div
-              whileInView={{ opacity: [0, 1] }}
-              transition={{ duration: 0.5 }}
+              {...theme.animations.fadeIn}
               className="app__skills-item app__flex"
               key={skill.name}
             >
@@ -55,8 +56,7 @@ const Skills = () => {
                 {experience.works.map((work) => (
                   <div key={`${experience.year}-${work.name}`}>
                     <motion.div
-                      whileInView={{ opacity: [0, 1] }}
-                      transition={{ duration: 0.5 }}
+                      {...theme.animations.fadeIn}
                       className="app__skills-exp-work"
                       key={`${experience.year}-${work.name}`}
                     >

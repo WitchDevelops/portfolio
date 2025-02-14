@@ -12,16 +12,16 @@ const StyledHeading = styled.h2`
   text-align: center;
   color: ${({ theme }) => theme.colors.black};
   text-transform: capitalize;
-  
+
   span {
     color: ${({ theme }) => theme.colors.accent};
   }
 
-  @media (min-width: 2000px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.xxl}) {
     font-size: ${({ theme }) => theme.fontSizes.headingDesktop};
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.xs}) {
     font-size: ${({ theme }) => theme.fontSizes.headingMobile};
   }
 `;

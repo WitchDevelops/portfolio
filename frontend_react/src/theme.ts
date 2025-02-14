@@ -27,4 +27,18 @@ export const theme = {
   transition: {
     baseTransition: "all 0.3s ease-in-out",
   },
+  breakpoints: {
+    xs: "450px",
+    sm: "576px",
+    md: "768px",
+    lg: "992px",
+    xl: "1200px",
+    xxl: "2000px",
+  },
+  animations: {
+    fadeIn: {
+      whileInView: { opacity: [0, 1] },
+      transition: { duration: 0.5 },
+    },
+  },
 };
