@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Tooltip } from 'react-tooltip';
 import { motion } from 'framer-motion';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
+import { Heading } from '../../components/typography/Heading';
 import './Skills.scss';
 
 const Skills = () => {
@@ -17,14 +17,15 @@ const Skills = () => {
       .then((data) => setSkills(data));
 
     client.fetch(expQuery)
-      .then((data) => setExperience(data));
+      .then((data) => {
+        const sortedExperience = data.sort((a, b) => parseInt(b.year) - parseInt(a.year));
+        setExperience(sortedExperience)
+      });
   }, [])
 
   return (
-    <section>
-      <h2 className="head-text">
-        Skills & <span>experience</span>
-      </h2>
+    <section className="app__wrap">
+      <Heading text="Skills &" highlight="Experience" />
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
           {skills.map((skill) => (
@@ -57,16 +58,12 @@ const Skills = () => {
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}
                       className="app__skills-exp-work"
-                      data-tooltip-content={work.desc}
-                      data-tooltip-id={work.name}
                       key={`${experience.year}-${work.name}`}
                     >
                       <h4 className="bold-text">{work.name}</h4>
                       <p className="p-text">{work.company}</p>
+                      <p>{work.desc}</p>
                     </motion.div>
-                    <Tooltip id={work.name} effect="solid" arrowColor="#FFF" className="skills-tooltip">
-                      {work.desc}
-                    </Tooltip>
                   </div>
                 ))}
               </motion.div>
