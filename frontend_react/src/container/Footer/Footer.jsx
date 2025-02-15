@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import emailjs from "@emailjs/browser";
 import { AppWrap, MotionWrap } from '../../wrapper';
+import { Button } from '../../components/buttons/Button';
 import './Footer.scss'
 
 const Footer = () => {
@@ -81,7 +82,9 @@ const Footer = () => {
               {...register("message")}
             />
           </div>
-          <button type="submit" className="btn-submit p-text" disabled={loading}>{loading ? ' Sending...' : 'Send Message'}</button>
+          <Button type="submit" disabled={loading} className="p-text">
+            {loading ? "Sending..." : "Send Message"}
+          </Button>
         </form>
         :
         <div className="app__footer-form">

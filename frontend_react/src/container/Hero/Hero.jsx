@@ -1,7 +1,7 @@
 import { AppWrap } from '../../wrapper';
 import { motion } from 'framer-motion';
 import { images } from '../../constants';
-import './Header.scss';
+import './Hero.scss';
 
 const scaleVariants = {
   whileInView: {
@@ -14,7 +14,7 @@ const scaleVariants = {
   },
 }
 
-const Header = () => {
+const Hero = () => {
   return (
     <section className="app__header app__flex">
       <motion.div
@@ -24,7 +24,6 @@ const Header = () => {
       >
         <div className="app__header-badge">
           <div className="badge-cmp app__flex">
-            {/* <span>👋</span> */}
             <div style={{ marginLeft: 20 }}>
               <p className="p-text">Hello, I am</p>
               <h1 className="head-text">Domi</h1>
@@ -74,4 +73,4 @@ const Header = () => {
   )
 }
 
-export default AppWrap(Header, 'home') // Header
+export default AppWrap(Hero, 'home')

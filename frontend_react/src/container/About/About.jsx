@@ -1,14 +1,11 @@
 import { useState, useEffect } from 'react';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { motion } from 'framer-motion';
-//for fetching data from CMS
 import { urlFor, client } from '../../client';
+import { Heading } from '../../components/typography/Heading';
 import './About.scss';
 
 const About = () => {
-
-  //fetching data from CMS
-  //START
   const [abouts, setAbouts] = useState([]);
 
   useEffect(() => {
@@ -16,14 +13,10 @@ const About = () => {
     client.fetch(query)
       .then((data) => setAbouts(data))
   }, []);
-  //END
 
   return (
     <section className="app__about app__flex">
-      <h2 className="head-text">
-        Crafting digital
-        <span> experiences</span>
-      </h2>
+      <Heading text="Crafing digital" highlight="experiences" />
       <div className="app__profiles">
         {abouts.map((about, index) => (
           <motion.div

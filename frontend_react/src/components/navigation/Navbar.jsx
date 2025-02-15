@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router';
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 import { images } from '../../constants';
+import { NAV_SECTIONS as sections } from '../../data/sections';
 import './Navbar.scss';
 
-const Navbar = () => {
+export const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
@@ -13,10 +15,15 @@ const Navbar = () => {
         <img src={images.logo} alt="logo" />
       </a>
       <ul className="app__navbar-links">
-        {['home', 'about', 'work', 'skills', 'testimonials', 'contact'].map((item) => (
-          <li className="app__flex p-text" key={`link-${item}`}>
+        {sections.map((section) => (
+          <li className="app__flex p-text" key={`link-${section}`}>
             <div />
-            <a href={`#${item}`}>{item}</a>
+            {
+              section === 'for recruiters' ? (
+                <NavLink to="/for-recruiters">{section}</NavLink>
+              ) :
+                (<a href={`/#${section}`} >{section}</a>)
+            }
           </li>
         ))}
       </ul>
@@ -32,11 +39,17 @@ const Navbar = () => {
           >
             <HiX onClick={() => setToggle(false)} />
             <ul>
-              {['home', 'about', 'work', 'skills', 'testimonials', 'contact'].map((item) => (
-                <li key={item}>
-                  <a href={`#${item}`} onClick={() => setToggle(false)}>
-                    {item}
-                  </a>
+              {sections.map((section) => (
+                <li key={section}>
+                  {section === "for recruiters" ? (
+                    <NavLink to="/for-recruiters/" onClick={() => setToggle(false)}>
+                      {section}
+                    </NavLink>
+                  ) : (
+                    <a href={`/#${section}`} onClick={() => setToggle(false)}>
+                      {section}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -46,5 +59,3 @@ const Navbar = () => {
     </nav>
   );
 };
-
-export default Navbar;

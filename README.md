@@ -38,9 +38,10 @@ Now that I have more experience, using `.env` to store the API keys is a very lo
 
 # TODO
 
-- reverse the order of work experiences - redo, delete tooltip
-- add a downloadable CV
 - add more projects
+- add a page for each project
+- rework the Skills and experience section - do something with the icons, expand the description of the junior frontend position, either move everything from Sanity elsewhere or improve the shema
+- rework the About me section (cards, they're dumb)
 
 # HOW TO
 
