@@ -1,4 +1,4 @@
-export default [
+export const NAV_SECTIONS = [
   "home",
   "about",
   "work",

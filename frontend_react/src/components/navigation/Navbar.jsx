@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { NavLink } from 'react-router';
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { motion } from 'framer-motion';
-import { images, sections } from '../../constants';
+import { images } from '../../constants';
+import { NAV_SECTIONS as sections } from '../../data/sections';
 import './Navbar.scss';
 
 export const Navbar = () => {
