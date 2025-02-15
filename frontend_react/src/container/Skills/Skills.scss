@@ -41,20 +41,21 @@
     height: 90px;
     border-radius: 50%;
     background-color: #fff;
+    @media (min-width: 2000px) {
+      width: 150px;
+      height: 150px;
+    }
+    @media (max-width: 300px) {
+      width: 70px;
+      height: 70px;
+    }
     img {
       width: 50%;
       height: 50%;
     }
+
     &:hover {
       box-shadow: 0 0 25px #e7dfe0;
-      @media (min-width: 2000px) {
-        width: 150px;
-        height: 150px;
-      }
-      @media (max-width: 300px) {
-        width: 70px;
-        height: 70px;
-      }
     }
   }
   p {
@@ -114,7 +115,7 @@
 }
 
 .app__skills-exp-year {
-    margin-right: 3rem;
+  margin-right: 3rem;
   p {
     font-weight: 800;
     color: var(--secondary-color);
