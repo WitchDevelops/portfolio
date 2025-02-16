@@ -47,8 +47,8 @@ export const ButtonLink: React.FC<ButtonLinkProps> = ({
   children,
   href,
   download,
-  target,
-  rel,
+  target = "_blank",
+  rel = "noreferrer",
 }) => {
   return (
     <StyledButtonLink href={href} target={target} rel={rel} download={download}>

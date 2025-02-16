@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { client, urlFor } from "@/client";
 import { Heading } from "@components/typography/Heading";
+import { ButtonsWrapper } from "@components/buttons/ButtonsWrapper";
+import { ButtonLink } from "@components/buttons/ButtonLink";
 
 export const ProjectDetailPage = () => {
   const { name } = useParams(); // Get the project name from the URL
@@ -51,16 +53,14 @@ export const ProjectDetailPage = () => {
   }
 
   return (
-    <section className="app__work-detail">
+    <section className="app__wrapper">
       <Heading text={work.title} />
       <img src={urlFor(work.imgUrl).url()} alt={work.name} />
       <p className="p-text">{work.description}</p>
-      <a href={work.projectLink} target="_blank" rel="noopener noreferrer">
-        View Project
-      </a>
-      <a href={work.codeLink} target="_blank" rel="noopener noreferrer">
-        View Code
-      </a>
+      <ButtonsWrapper>
+        <ButtonLink href={work.projectLink}>View Project</ButtonLink>
+        <ButtonLink href={work.codeLink}>View Code</ButtonLink>
+      </ButtonsWrapper>
     </section>
   );
 };

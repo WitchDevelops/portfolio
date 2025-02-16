@@ -11,7 +11,9 @@
     "noEmit": true, // Prevents TypeScript from generating output files from .js
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "strict": true
+    "strict": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src"], // Ensures TypeScript only checks files in src/
   "exclude": ["node_modules", "dist"]

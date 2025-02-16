@@ -1,11 +1,11 @@
 import React from "react";
 import { Worker, Viewer, ProgressBar } from "@react-pdf-viewer/core";
-import packageJson from "../../../package.json";
+import packageJson from "@/../package.json";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import { motion } from "framer-motion";
 import styled, { useTheme } from "styled-components";
-import { Heading } from "../typography/Heading";
-import { DownloadButtonsWrapper } from "../../container/Resume/DownloadButtonsWrapper";
+import { Heading } from "@components/typography/Heading";
+import { DownloadCVButtons } from "@/container/Resume/DownloadCVButtons";
 
 interface PDFViewerProps {
   fileSrc: string;
@@ -43,7 +43,7 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ fileSrc }) => {
         <div style={{ marginBlock: "2rem" }}>
           <Heading text="My" highlight="Resume" />
         </div>
-        <DownloadButtonsWrapper fileSrc={fileSrc} />
+        <DownloadCVButtons fileSrc={fileSrc} />
         <PDFContainer {...theme.animations.fadeIn}>
           <Viewer
             fileUrl={fileSrc}
