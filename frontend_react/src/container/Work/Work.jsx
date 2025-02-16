@@ -79,7 +79,7 @@ const Work = () => {
       >
         {filterWork.map((work, index) => (
 
-          <Link to={`/projects/${encodeURIComponent(work.title)}`} state={{ work }} className="app__work-item app__flex" key={index}>
+          <div className="app__work-item app__flex" key={index}>
             <div className="app__work-img app__flex">
               <img src={urlFor(work.imgUrl)} alt={work.title} className="app__work-img" />
               <motion.div
@@ -111,7 +111,7 @@ const Work = () => {
 
               </motion.div>
             </div>
-            <div className="app__work-content">
+            <Link to={`/projects/${encodeURIComponent(work.title)}`} className="app__work-content">
               <div className="app__work-card-description">
                 <h4 className="bold-text">{work.title}</h4>
                 <p className="p-text" style={{ marginTop: 10 }}>{work.description}</p>
@@ -124,8 +124,8 @@ const Work = () => {
                 }
 
               </div>
-            </div>
-          </Link>
+            </Link>
+          </div>
         ))
         }
       </motion.div>
