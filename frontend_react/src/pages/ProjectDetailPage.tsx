@@ -4,6 +4,26 @@ import { client, urlFor } from "@/client";
 import { Heading } from "@components/typography/Heading";
 import { ButtonsWrapper } from "@components/buttons/ButtonsWrapper";
 import { ButtonLink } from "@components/buttons/ButtonLink";
+import styled from "styled-components";
+import { theme } from "@/theme";
+
+const StyledParallaxHeroImage = styled.div`
+  min-height: 200px;
+  background-attachment: fixed;
+  background-position: top left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 100px black;
+  transition: ${theme.transition.baseTransition};
+  &:hover {
+    box-shadow: none;
+  }
+  @media (min-width: ${theme.breakpoints.md}) {
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+  }
+`;
 
 export const ProjectDetailPage = () => {
   const { name } = useParams(); // Get the project name from the URL
@@ -55,7 +75,11 @@ export const ProjectDetailPage = () => {
   return (
     <section className="app__wrapper">
       <Heading text={work.title} />
-      <img src={urlFor(work.imgUrl).url()} alt={`Screenshot of ${work.title}`} />
+
+      <StyledParallaxHeroImage
+        style={{ backgroundImage: `url(${urlFor(work.imgUrl).url()})` }}
+      />
+
       <p className="p-text">{work.description}</p>
       <ButtonsWrapper>
         <ButtonLink href={work.projectLink}>View Project</ButtonLink>
