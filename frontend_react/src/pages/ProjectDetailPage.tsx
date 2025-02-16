@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
-import { useParams, useLocation, useNavigate } from "react-router-dom";
+import { useParams, useLocation, useNavigate, Link } from "react-router-dom";
 import { client, urlFor } from "@/client";
 import { Heading } from "@components/typography/Heading";
 import { ButtonsWrapper } from "@components/buttons/ButtonsWrapper";
 import { ButtonLink } from "@components/buttons/ButtonLink";
 import styled from "styled-components";
 import { theme } from "@/theme";
+import { FaArrowAltCircleLeft } from "react-icons/fa";
+import { ReturnButton } from "@/components/buttons/ButtonReturn";
 
 const StyledParallaxHeroImage = styled.div`
   min-height: 200px;
   width: 100%;
   background-attachment: fixed;
-  background-position: top left;
+  background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   box-shadow: inset 0 0 100px black;
@@ -22,7 +24,6 @@ const StyledParallaxHeroImage = styled.div`
   @media (min-width: ${theme.breakpoints.md}) {
     min-height: 300px;
     background-size: cover;
-    background-position: center;
   }
 `;
 
@@ -75,11 +76,19 @@ export const ProjectDetailPage = () => {
 
   return (
     <section className="app__wrapper app__flex" style={{ gap: "2rem" }}>
+      <ReturnButton text="Return to all projects" />
+
       <Heading text={work.title} />
 
-      <StyledParallaxHeroImage
-        style={{ backgroundImage: `url(${urlFor(work.imgUrl).url()})` }}
-      />
+      <Link
+        to={work.projectLink}
+        style={{ width: "100%" }}
+        title={`View project: ${work.title}`}
+      >
+        <StyledParallaxHeroImage
+          style={{ backgroundImage: `url(${urlFor(work.imgUrl).url()})` }}
+        />
+      </Link>
 
       <p className="p-text">{work.description}</p>
       <ButtonsWrapper>
