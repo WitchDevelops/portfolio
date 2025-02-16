@@ -81,7 +81,7 @@ const Work = () => {
 
           <div className="app__work-item app__flex" key={index}>
             <div className="app__work-img app__flex">
-              <img src={urlFor(work.imgUrl)} alt={work.title} className="app__work-img" />
+              <img src={urlFor(work.imgUrl)} alt={`Screenshot of ${work.title}`} className="app__work-img" />
               <motion.div
                 whileInView={{ opacity: isMobile ? 1 : 0 }}
                 whileHover={{ opacity: isMobile ? 1 : [0, 1] }}

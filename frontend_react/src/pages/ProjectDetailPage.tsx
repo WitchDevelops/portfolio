@@ -55,7 +55,7 @@ export const ProjectDetailPage = () => {
   return (
     <section className="app__wrapper">
       <Heading text={work.title} />
-      <img src={urlFor(work.imgUrl).url()} alt={work.name} />
+      <img src={urlFor(work.imgUrl).url()} alt={`Screenshot of ${work.title}`} />
       <p className="p-text">{work.description}</p>
       <ButtonsWrapper>
         <ButtonLink href={work.projectLink}>View Project</ButtonLink>
