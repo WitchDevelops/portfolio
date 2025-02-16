@@ -6,6 +6,7 @@ import { SocialMediaOverlay } from './components/socialLinks/SocialMediaOverlay'
 import { Navbar } from './components/navigation/Navbar';
 import { ForRecruitersPage } from './pages/ForRecruitersPage';
 import { HomePage } from './pages/HomePage';
+import { ProjectDetailPage } from './pages/ProjectDetailPage';
 import './App.scss';
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/for-recruiters" element={<ForRecruitersPage />} />
+          <Route path="/projects/:name" element={<ProjectDetailPage />} />
         </Routes>
       </div>
     </ThemeProvider>

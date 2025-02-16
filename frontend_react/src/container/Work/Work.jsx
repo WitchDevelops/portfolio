@@ -1,13 +1,17 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { motion } from 'framer-motion';
+
 import { AppWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
-import { useMediaQuery } from 'react-responsive';
+import { PROJECT_TYPE_FILTERS as projectTypeFilters, PROJECT_TECH_FILTERS as projectTechFilters } from '../../data/filters';
+import { Heading } from '../../components/typography/Heading';
 import './Work.scss';
 
 const Work = () => {
-  const [activeFilter, setActiveFilter] = useState('All');
+  const [, setActiveFilter] = useState('All');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
@@ -36,17 +40,12 @@ const Work = () => {
 
   return (
     <section className="app__works">
-      <h2 className="head-text">
-        My Creative <span>Portfolio</span>
-      </h2>
+      <Heading text="My Creative" highlight="Portfolio" />
 
       <div className="app__work-filters-wrapper">
         <p>Filter by project type</p>
         <div className="app__work-filter">
-          {[
-            'Web Page',
-            'Web App',
-          ].map((item, index) => (
+          {projectTypeFilters.map((item, index) => (
             <div
               key={index}
               className={`app__work-filter-item app__flex ${index === item ? 'item-active' : ''
@@ -61,21 +60,7 @@ const Work = () => {
       <div className="app__work-filters-wrapper">
         <p>Filter by technology used</p>
         <div className="app__work-filter">
-          {[
-            'All',
-            'API',
-            'Authentication',
-            'React',
-            'Next.js',
-            'Tailwind CSS',
-            'Supabase',
-            'Material UI',
-            'TypeScript',
-            'JavaScript',
-            'SASS',
-            'CSS',
-            'HTML'
-          ].map((item, index) => (
+          {projectTechFilters.map((item, index) => (
             <div
               key={index}
               className={`app__work-filter-item app__flex ${index === item ? 'item-active' : ''
@@ -93,9 +78,10 @@ const Work = () => {
         className="app__work-portfolio"
       >
         {filterWork.map((work, index) => (
-          <div className="app__work-item app__flex" key={index}>
+
+          <Link to={`/projects/${encodeURIComponent(work.title)}`} state={{ work }} className="app__work-item app__flex" key={index}>
             <div className="app__work-img app__flex">
-              <img src={urlFor(work.imgUrl)} alt={work.name} className="app__work-img" />
+              <img src={urlFor(work.imgUrl)} alt={work.title} className="app__work-img" />
               <motion.div
                 whileInView={{ opacity: isMobile ? 1 : 0 }}
                 whileHover={{ opacity: isMobile ? 1 : [0, 1] }}
@@ -139,7 +125,7 @@ const Work = () => {
 
               </div>
             </div>
-          </div>
+          </Link>
         ))
         }
       </motion.div>
@@ -147,4 +133,4 @@ const Work = () => {
   )
 }
 
-export default AppWrap(Work, 'work')
+export default AppWrap(Work, 'projects')

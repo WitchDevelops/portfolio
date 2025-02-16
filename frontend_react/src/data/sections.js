@@ -1,7 +1,7 @@
 export const NAV_SECTIONS = [
   "home",
   "about",
-  "work",
+  "projects",
   "testimonials",
   "for recruiters",
   "contact",

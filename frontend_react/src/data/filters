@@ -1,0 +1,16 @@
+export const PROJECT_TYPE_FILTERS = ["Web Page", "Web App"];
+export const PROJECT_TECH_FILTERS = [
+  "All",
+  "HTML",
+  "CSS",
+  "SASS",
+  "Tailwind CSS",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Supabase",
+  "Material UI",
+  "API",
+  "Authentication",
+];
