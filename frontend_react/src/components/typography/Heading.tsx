@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 interface HeadingProps {
   text: string;
-  highlight: string;
+  highlight?: string;
 }
 
 const StyledHeading = styled.h2`
@@ -26,7 +26,7 @@ const StyledHeading = styled.h2`
   }
 `;
 
-export const Heading: React.FC<HeadingProps> = ({ text, highlight }) => {
+export const Heading: React.FC<HeadingProps> = ({ text, highlight = "" }) => {
   return (
     <StyledHeading>
       {text} <span>{highlight}</span>

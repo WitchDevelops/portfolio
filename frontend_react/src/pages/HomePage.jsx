@@ -1,4 +1,4 @@
-import { About, Footer, Hero, Testimonials, Work } from "../container"
+import { About, Footer, Hero, Testimonials, Work } from "@container"
 
 export const HomePage = () => {
     return (

@@ -1,5 +1,5 @@
-import { Skills } from "../container";
-import { PDFViewer } from "../components/pdfViewer/pdfViewer";
+import { Skills } from "@container";
+import { PDFViewer } from "@components/pdfViewer/pdfViewer";
 
 
 export const ForRecruitersPage = () => {

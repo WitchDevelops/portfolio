@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router';
 import { ThemeProvider } from 'styled-components';
-import { theme } from './theme';
-import { SocialMediaOverlay } from './components/socialLinks/SocialMediaOverlay';
-import { Navbar } from './components/navigation/Navbar';
-import { ForRecruitersPage } from './pages/ForRecruitersPage';
-import { HomePage } from './pages/HomePage';
-import { ProjectDetailPage } from './pages/ProjectDetailPage';
-import './App.scss';
+import { theme } from '@/theme';
+import { SocialMediaOverlay } from '@components/socialLinks/SocialMediaOverlay';
+import { Navbar } from '@components/navigation/Navbar';
+import { ForRecruitersPage } from '@pages/ForRecruitersPage';
+import { HomePage } from '@pages/HomePage';
+import { ProjectDetailPage } from '@pages/ProjectDetailPage';
+import '@/App.scss';
 
 const App = () => {
   // handle hash-based scrolling of sections on home page

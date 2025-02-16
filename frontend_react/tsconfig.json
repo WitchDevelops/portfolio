@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"]
+    },
+    "jsx": "react-jsx", // Ensures React JSX syntax works
+    "allowJs": true, // Allows .js and .jsx files
+    "checkJs": false, // (Optional) Set to true if you want TypeScript to check .js files
+    "noEmit": true, // Prevents TypeScript from generating output files from .js
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true
+  },
+  "include": ["src"], // Ensures TypeScript only checks files in src/
+  "exclude": ["node_modules", "dist"]
+}
