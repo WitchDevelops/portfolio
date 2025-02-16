@@ -1,25 +1,20 @@
 import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
-import { URL, fileURLToPath } from "url";
+import { fileURLToPath } from "url";
 import path from "path";
 
-const keys = ["VITE_SANITY_PROJECT_ID", "VITE_SANITY_TOKEN"];
-// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, new URL(".", import.meta.url).pathname, "");
-  const processEnv = {};
   const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-  keys.forEach((key) => {
-    processEnv[key] = env[key];
-  });
+  const env = loadEnv(mode, __dirname, "");
   return {
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "src"),
         "@components": path.resolve(__dirname, "src/components"),
-        "@pages": path.resolve(__dirname, "src/pages"),
         "@container": path.resolve(__dirname, "src/container"),
+        "@data": path.resolve(__dirname, "src/data"),
+        "@pages": path.resolve(__dirname, "src/pages"),
+        "@wrapper": path.resolve(__dirname, "src/wrapper"),
       },
     },
     define: {

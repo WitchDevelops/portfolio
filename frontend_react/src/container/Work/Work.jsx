@@ -4,10 +4,10 @@ import { useMediaQuery } from 'react-responsive';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 
-import { AppWrap } from '../../wrapper';
-import { urlFor, client } from '../../client';
-import { PROJECT_TYPE_FILTERS as projectTypeFilters, PROJECT_TECH_FILTERS as projectTechFilters } from '../../data/filters';
-import { Heading } from '../../components/typography/Heading';
+import { AppWrap } from '@wrapper/AppWrap';
+import { urlFor, client } from '@/client';
+import { PROJECT_TYPE_FILTERS as projectTypeFilters, PROJECT_TECH_FILTERS as projectTechFilters } from '@data/filters';
+import { Heading } from '@components/typography/Heading';
 import './Work.scss';
 
 const Work = () => {
