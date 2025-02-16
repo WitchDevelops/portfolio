@@ -9,6 +9,7 @@ import { theme } from "@/theme";
 
 const StyledParallaxHeroImage = styled.div`
   min-height: 200px;
+  width: 100%;
   background-attachment: fixed;
   background-position: top left;
   background-size: contain;
@@ -73,7 +74,7 @@ export const ProjectDetailPage = () => {
   }
 
   return (
-    <section className="app__wrapper">
+    <section className="app__wrapper app__flex" style={{ gap: "2rem" }}>
       <Heading text={work.title} />
 
       <StyledParallaxHeroImage
